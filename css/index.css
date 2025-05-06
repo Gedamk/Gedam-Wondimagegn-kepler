@@ -1,8 +1,10 @@
-.job-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.job {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  margin-bottom: 20px;
 }
+
 #connect p {
   display: flex;
   gap: 15px;
@@ -85,3 +87,57 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+/* ====== Mobile Styles (<= 600px) ====== */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.8rem;
+    text-align: left;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    color: #2c5282;
+  }
+
+  ul li {
+    padding: 4px;
+    background-color: #e0f2fe;
+  }
+}
+
+/* ====== Tablet Styles (601px - 1024px) ====== */
+@media (min-width: 601px) and (max-width: 1024px) {
+  header h1 {
+    font-size: 2.2rem;
+    text-align: center;
+    font-style: italic;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    color: #4a5568;
+  }
+
+  ul li {
+    background-color: #ebf8ff;
+    margin-left: 10px;
+  }
+}
+
+#skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+#skills li {
+  background-color: #e0f0ff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+
