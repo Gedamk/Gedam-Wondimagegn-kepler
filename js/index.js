@@ -12,20 +12,19 @@ footer.appendChild(copyright);
 
 // ===== Add Dynamic Skills =====
 const skills = [
-  "JavaScript",
-  "HTML",
-  "CSS",
-  "Git & GitHub",
-  "VSCode",
-  "Remote Support",
-  "Asset Management"
+  "Frontend: HTML, CSS, JavaScript (in progress)",
+  "Version Control: Git, GitHub",
+  "IT Support: Google IT Support, Comptia A+ (completed training)",
+  "Software: Antivirus, iOS, Android OS",
+  "Hardware: Desktops, Laptops, Printers",
+  "Networking: Virtualization, Basic Security Concepts"
 ];
 
-const skillsSection = document.getElementById('skills');
-const skillsList = skillsSection.querySelector('ul');
+const skillsList = document.getElementById("skills-list");
 
-for (let i = 0; i < skills.length; i++) {
-  const skill = document.createElement('li');
-  skill.innerText = skills[i];
-  skillsList.appendChild(skill);
-}
+skills.forEach(skill => {
+  const li = document.createElement("li");
+  li.textContent = skill;
+  skillsList.appendChild(li);
+});
+
