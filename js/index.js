@@ -76,3 +76,38 @@ messageForm.addEventListener("submit", function (event) {
   messageForm.reset();
 });
 
+//=====FEtch and Display GitHub projects =====
+const GITHUB_USERNAME = 'Gedamk';
+const projectSection = document.getElementById('projects');
+const projectList = projectSection.querySelector('ul');
+
+const desiredRepos = ['Gedam-Wondimagegn-kepler', 'TheDogAPI'];
+
+fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos`)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("GitHub API request failed");
+    }
+    return response.json();
+  })
+  .then(repositories => {
+    repositories
+      .filter(repo => desiredRepos.includes(repo.name))
+      .forEach(repo => {
+        const projectItem = document.createElement('li');
+        const projectLink = document.createElement('a');
+        projectLink.href = repo.html_url;
+        projectLink.innerText = repo.name;
+        projectLink.target = '_blank';
+        projectItem.appendChild(projectLink);
+        projectList.appendChild(projectItem);
+      });
+  })
+  .catch(error => {
+    const errorMessage = document.createElement('li');
+    errorMessage.innerText = "Unable to load projects at this time.";
+    projectList.appendChild(errorMessage);
+    console.error("Error fetching GitHub repos:", error);
+  });
+
+

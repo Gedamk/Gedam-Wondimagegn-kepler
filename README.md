@@ -1,4 +1,3 @@
 # Gedam-Wondimagegn-kepler
-Portfolio project for introduction to programming course with Code the Dream
-
-Gedam Kacha Wondimagegn
+# Open API Project
+[My Dog API project](https://github.com/Gedamk/TheDogAPI)
