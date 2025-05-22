@@ -76,7 +76,7 @@ messageForm.addEventListener("submit", function (event) {
   messageForm.reset();
 });
 
-//=====FEtch and Display GitHub projects =====
+//===== Fetch and Display GitHub projects =====
 const GITHUB_USERNAME = 'Gedamk';
 const projectSection = document.getElementById('projects');
 const projectList = projectSection.querySelector('ul');
@@ -91,17 +91,17 @@ fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos`)
     return response.json();
   })
   .then(repositories => {
-    repositories
-      .filter(repo => desiredRepos.includes(repo.name))
-      .forEach(repo => {
-        const projectItem = document.createElement('li');
-        const projectLink = document.createElement('a');
-        projectLink.href = repo.html_url;
-        projectLink.innerText = repo.name;
-        projectLink.target = '_blank';
-        projectItem.appendChild(projectLink);
-        projectList.appendChild(projectItem);
-      });
+    const filteredRepos = repositories.filter(repo => desiredRepos.includes(repo.name));
+    for (let i = 0; i < filteredRepos.length; i++) {
+      const repo = filteredRepos[i];
+      const projectItem = document.createElement('li');
+      const projectLink = document.createElement('a');
+      projectLink.href = repo.html_url;
+      projectLink.innerText = repo.name;
+      projectLink.target = '_blank';
+      projectItem.appendChild(projectLink);
+      projectList.appendChild(projectItem);
+    }
   })
   .catch(error => {
     const errorMessage = document.createElement('li');
