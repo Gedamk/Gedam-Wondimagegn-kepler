@@ -1,31 +1,31 @@
-.job {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 10px;
-  margin-bottom: 20px;
+body {
+  background: #f0f4f8;
+  color: #333;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px;
+  margin: 0;
 }
 
-#connect p {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  justify-content: center;
+header h1 {
+  font-size: 2.5rem;
+  color: #2a4365;
+  text-align: center;
 }
 
 nav {
   position: sticky;
   top: 0;
-  background-color: #ffffff;
+  background: white;
   padding: 10px 0;
-  border-bottom: 1px solid #e2e8f0;
-  z-index: 1000;
+  border-bottom: 1px solid #ccc;
+  z-index: 999;
 }
 
 nav ul {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  list-style-type: none;
+  gap: 15px;
+  list-style: none;
   padding: 0;
   margin: 0;
 }
@@ -33,204 +33,66 @@ nav ul {
 nav a {
   font-weight: bold;
   color: #2b6cb0;
-}
-
-/* Page background and default font */
-body {
-  background-color: #f0f4f8;
-  color: #333;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 20px;
-}
-
-/* Transform your name */
-header h1 {
-  color: #2a4365;
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: center;
-}
-
-/* Headings */
-h2 {
-  color: #1a202c;
-  font-size: 1.8rem;
-  margin-top: 40px;
-  border-bottom: 2px solid #cbd5e0;
-  padding-bottom: 5px;
-}
-
-/* Section spacing */
-section {
-  margin-bottom: 40px;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
-}
-
-/* Styled list blocks in experience */
-ul li {
-  margin-bottom: 10px;
-  padding: 8px;
-  background-color: #edf2f7;
-  border-left: 4px solid #3182ce;
-}
-
-/* Styling links */
-a {
-  color: #3182ce;
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
-/* ====== Mobile Styles (<= 600px) ====== */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 1.8rem;
-    text-align: left;
-  }
-
-  h2 {
-    font-size: 1.4rem;
-    color: #2c5282;
-  }
-
-  ul li {
-    padding: 4px;
-    background-color: #e0f2fe;
-  }
-}
-
-/* ====== Tablet Styles (601px - 1024px) ====== */
-@media (min-width: 601px) and (max-width: 1024px) {
-  header h1 {
-    font-size: 2.2rem;
-    text-align: center;
-    font-style: italic;
-  }
-
-  h2 {
-    font-size: 1.6rem;
-    color: #4a5568;
-  }
-
-  ul li {
-    background-color: #ebf8ff;
-    margin-left: 10px;
-  }
-}
-
-#skills ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  list-style: none;
-  padding: 0;
-}
-
-#skills li {
-  background-color: #e0f0ff;
-  padding: 8px 12px;
+section {
+  background: #fff;
+  padding: 20px;
+  margin-top: 20px;
   border-radius: 6px;
-  font-weight: 500;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.05);
 }
-/* ====== Message Form Styling ====== */
+
+ul li {
+  padding: 8px;
+  background: #edf2f7;
+  margin-bottom: 10px;
+  border-left: 4px solid #3182ce;
+}
+
 form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   max-width: 500px;
   margin: auto;
 }
 
-form label {
-  font-weight: bold;
-  margin-bottom: 4px;
-}
-
-form input,
-form textarea {
+form input, form textarea {
   padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #cbd5e0;
+  border: 1px solid #ccc;
   border-radius: 4px;
   width: 100%;
 }
 
 form button {
-  background-color: #3182ce;
+  padding: 10px;
+  background: #3182ce;
   color: white;
-  padding: 10px 15px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-weight: bold;
 }
 
 form button:hover {
-  background-color: #2b6cb0;
+  background: #2b6cb0;
 }
 
-/* ====== Messages List Styling ====== */
 #messages ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
 }
 
 #messages li {
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: #f7fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 4px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
-}
+  background: #f9f9f9;
+  padding: 10px;
+  margin-bottom
 
-#messages li span {
-  margin-left: 10px;
-  flex: 1;
-}
-
-#messages li button {
-  background-color: #e53e3e;
-  color: white;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-#messages li button:hover {
-  background-color: #c53030;
-}
-
-#projects ul {
-  list-style-type: none;
-  padding-left: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-#projects li {
-  background: #f5f5f5;
-  padding: 10px 15px;
-  border-radius: 6px;
-}
-
-#projects a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-}
 
 
 
